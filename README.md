@@ -5,7 +5,7 @@
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Blockchain Developer-darkblue?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Mavox ID-Blockchain Developer-darkblue?style=for-the-badge&logoColor=white" />
   <img src="https://img.shields.io/badge/Owner-Blockchain Hyper Development™-purple?style=for-the-badge" />
   <img src="https://img.shields.io/badge/GitHub-5 Years-green?style=for-the-badge" />
 </p>
@@ -54,5 +54,5 @@ I strive for **excellence**, deliver results, and continuously grow as a develop
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Powered by-Mavox-ID-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Powered by-Mavox ID-red?style=for-the-badge&logoColor=white" />
 </p>

@@ -36,7 +36,7 @@
       z-index: -1;
     }
     section {
-      height: 100vh;
+      height: 80vh;
       display: flex; flex-direction: column;
       justify-content: center; align-items: center;
       text-align: center;
@@ -65,7 +65,7 @@
     h2 { font-size: 2rem; margin-bottom: 20px; color: #ffdd00; }
     ul { list-style: none; font-size: 1.2rem; line-height: 2rem; }
 
-    .carousel {
+.carousel {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -73,8 +73,7 @@
 
 .carousel-track {
   display: flex;
-  width: max-content;
-  animation: scroll 20s linear infinite;
+  gap: 10px;
 }
 
 .project-card {
@@ -87,28 +86,51 @@
   flex-shrink: 0;
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+footer {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background: rgba(30, 30, 50, 0.85);
+  border-radius: 15px;
+  color: #ffdd00;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 20px rgba(255, 221, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  animation: fadeInUp 1s ease forwards;
 }
 
-    footer {
-    height: 40vh;
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px 20px 0 0;
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    scroll-snap-align: start;
-    padding: 20px;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.4);
-    transform: translateZ(0);
-    }
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer a {
+  color: #ffdd00;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffd633;
+  text-shadow: 0 0 8px #ffd633;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
     @media (max-width: 768px) {
       h2 { font-size: 1.6rem; }
@@ -136,6 +158,70 @@
   transform: translateY(-6px) scale(1.04);
   box-shadow: 0 6px 15px rgba(255,255,255,0.25);
 }
+.skills-fly {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skills-fly li {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: rgba(0, 100, 200, 0.7);
+  border-radius: 12px;
+  font-weight: bold;
+  color: #fff200;
+  opacity: 0;
+  transform: translateY(50px) rotate(-10deg);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.skills-fly li:hover {
+  transform: translateY(-5px) scale(1.05) rotate(0deg);
+  box-shadow: 0 6px 18px rgba(255,255,255,0.3);
+  background: rgba(0,100,200,0.85);
+}
+
+@media (max-width: 768px) {
+  .skills-fly li {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin: 5px;
+  }
+}
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+#contact a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px 20px;
+  margin: 10px 0;
+  font-size: 1.4rem;
+  color: #ffdd00;
+  background: rgba(40, 20, 60, 0.8);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 221, 0, 0.2);
+}
+
+#contact a:hover {
+  background: rgba(60, 30, 90, 0.9);
+  box-shadow: 0 0 20px rgba(255, 221, 0, 0.5);
+  color: #ffd633;
+}
   </style>
 </head>
 <body>
@@ -148,17 +234,14 @@
 
 <div class="carousel">
   <div class="carousel-track">
-    <div class="project-card">B-HD™ Owner & Blockchain Solutions</div>
-    <div class="project-card">GitHub Projects & Enterprise</div>
+    <div class="project-card">B-HD™ Owner</div>
+    <div class="project-card">GitHub Projects</div>
     <div class="project-card">Web-sites & Design/API</div>
     <div class="project-card">Crypto & Mobile Apps</div>
-
-    <!-- Dup.C -->
-
-    <div class="project-card">B-HD™ Owner & Blockchain Solutions</div>
-    <div class="project-card">GitHub Projects & Enterprise</div>
-    <div class="project-card">Web-sites & Design/API</div>
-    <div class="project-card">Crypto & Mobile Apps</div>
+    <div class="project-card">Blockchain Solutions</div>
+    <div class="project-card">Enterprise</div>
+    <div class="project-card">Community & Safe Communication</div>
+    <div class="project-card">Contibuting</div>
   </div>
 </div>
 
@@ -169,7 +252,7 @@
 
 <section id="skills">
   <h2>Skills</h2>
-  <ul class="fly-in">
+  <ul class="skills-fly">
     <li>Java</li>
     <li>JavaScript</li>
     <li>Python</li>
@@ -182,111 +265,140 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-card">B-HD™ Blockchain Solutions</div>
-    <div class="project-card">GitHub Projects</div>
-    <div class="project-card">Web-sites & APIs</div>
-    <div class="project-card">Crypto & Mobile Apps</div>
+    <ul class="fly-in">
+    <li class="project-card">B-HD™ Blockchain Solutions</li>
+    <li class="project-card">GitHub Projects</li>
+    <li class="project-card">Web-sites & APIs</li>
+    <li class="project-card">Crypto & Mobile Apps</li>
+    </ul>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:markd.voznyuk@gmail.com">markd.voznyuk@gmail.com</a></p>
-    <p>Website: <a href="https://ye-a.pp.ua" target="_blank">Ye-A! Website</a></p>
-  </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <a href="mailto:markd.voznyuk@gmail.com">markd.voznyuk@gmail.com</a>
+  <a href="https://github.com/Mavox-ID" target="_blank">Github Profile</a>
+  <a href="https://github.com/B-HDtm" target="_blank">B-HD™ Github Organization</a>
+  <a href="https://github.com/Mavox-ID?tab=repositories" target="_blank">My Github Repo</a>
+  <a href="https://github.com/B-HDtm?tab=repositories" target="_blank">B-HD™ Github Repo</a>
+  <a href="https://ye-a.pp.ua" target="_blank">Ye-A! Website</a>
+</section>
+
 
   <footer>
     <p>© Ye-A! Website | Powered by Mavox-ID</p>
   </footer>
 
-  <script>
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.3 });
-    sections.forEach(s => observer.observe(s));
-    const skills = document.querySelectorAll(".fly-in li");
+<script>
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => observer.observe(s));
 
-    skills.forEach(skill => {
-    observer.observe(skill);
-    });
-    const skillItems = document.querySelectorAll('.fly-in li');
+const skills = document.querySelectorAll(".fly-in li");
+skills.forEach(skill => observer.observe(skill));
 
-    skillItems.forEach(item => {
-    item.addEventListener('touchstart', () => {
+const skillItems = document.querySelectorAll('.fly-in li');
+skillItems.forEach(item => {
+  item.addEventListener('touchstart', () => {
     item.style.transform = 'translateY(-8px) scale(1.05)';
     item.style.boxShadow = '0 8px 20px rgba(255,255,255,0.3)';
-    });
-    item.addEventListener('touchend', () => {
+  });
+  item.addEventListener('touchend', () => {
     item.style.transform = 'translateY(0) scale(1)';
     item.style.boxShadow = 'none';
   });
 });
 
-
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let stars = [];
-    for (let i = 0; i < 150; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5
-      });
+const skillFlyItems = document.querySelectorAll('.skills-fly li');
+const skillsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0) rotate(0deg)';
     }
+  });
+}, { threshold: 0.3 });
+skillFlyItems.forEach(item => skillsObserver.observe(item));
 
-    let mouse = { x: null, y: null };
-    window.addEventListener("mousemove", e => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
+const track = document.querySelector('.carousel-track');
+const cards = Array.from(track.children);
+cards.forEach(card => {
+  const clone = card.cloneNode(true);
+  track.appendChild(clone);
+});
 
-    if (window.DeviceOrientationEvent) {
-      window.addEventListener("deviceorientation", e => {
-        let tiltX = e.gamma / 45; // -45..45
-        let tiltY = e.beta / 90;  // -90..90
-        mouse.x = canvas.width/2 + tiltX * canvas.width/2;
-        mouse.y = canvas.height/2 + tiltY * canvas.height/2;
-      });
+let scrollPos = 0;
+function animateCarousel() {
+  scrollPos += 1;
+  if(scrollPos >= track.scrollWidth / 2) scrollPos = 0;
+  track.style.transform = `translateX(-${scrollPos}px)`;
+  requestAnimationFrame(animateCarousel);
+}
+animateCarousel();
+
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+for (let i = 0; i < 150; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+let mouse = { x: null, y: null };
+window.addEventListener("mousemove", e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(15,15,26,0.85)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  stars.forEach(s => {
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+    ctx.fillStyle = "rgba(255,255,255,0.8)";
+    ctx.fill();
+
+    s.x += s.dx;
+    s.y += s.dy;
+
+    if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
+    if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
+
+    // магнитное притяжение к мышке
+    if (mouse.x !== null && mouse.y !== null) {
+      let dx = s.x - mouse.x;
+      let dy = s.y - mouse.y;
+      let dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 120) {
+        s.x += dx / dist * 3;
+        s.y += dy / dist * 3;
+      }
     }
+  });
 
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(255,255,255,0.8)";
-      stars.forEach(s => {
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-        ctx.fill();
+  requestAnimationFrame(animateStars);
+}
 
-        s.x += s.dx; s.y += s.dy;
+animateStars();
 
-        if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
-        if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
-
-        if (mouse.x && mouse.y) {
-          let dx = s.x - mouse.x;
-          let dy = s.y - mouse.y;
-          let dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 120) {
-            s.x += dx / dist * 3;
-            s.y += dy / dist * 3;
-          }
-        }
-      });
-      requestAnimationFrame(animateStars);
-    }
-    animateStars();
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 # 👋 Hello, I'm Mavox-ID
 
 I’m a **Blockchain & Web Developer**, crypto enthusiast, and **Admin at B-HD™**.  
-With **5+ years of experience on GitHub**, I build fast, secure, and innovative solutions for the decentralized future.  
+With **2+ years of experience on GitHub**, I build fast, secure, and innovative solutions for the decentralized future.  
 
 I don’t just code — I **shape the future of blockchain, smart contracts, and web technologies**.  
 

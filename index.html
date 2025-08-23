@@ -355,11 +355,24 @@ for (let i = 0; i < 150; i++) {
   });
 }
 
-let mouse = { x: null, y: null };
-window.addEventListener("mousemove", e => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-});
+let pointer = { x: null, y: null };
+let isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+if (!isMobile) {
+  window.addEventListener("mousemove", e => {
+    pointer.x = e.clientX;
+    pointer.y = e.clientY;
+  });
+}
+
+if (isMobile && window.DeviceOrientationEvent) {
+  window.addEventListener("deviceorientation", e => {
+    let tiltX = e.gamma / 45;
+    let tiltY = e.beta / 90;
+    pointer.x = canvas.width / 2 + tiltX * canvas.width / 2;
+    pointer.y = canvas.height / 2 + tiltY * canvas.height / 2;
+  });
+}
 
 function animateStars() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -368,21 +381,22 @@ function animateStars() {
 
   stars.forEach(s => {
     ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
     ctx.fillStyle = "rgba(255,255,255,0.8)";
     ctx.fill();
 
     s.x += s.dx;
     s.y += s.dy;
 
-    if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
-    if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
+    if (s.x < 0) s.x = canvas.width;
+    if (s.x > canvas.width) s.x = 0;
+    if (s.y < 0) s.y = canvas.height;
+    if (s.y > canvas.height) s.y = 0;
 
-    // магнитное притяжение к мышке
-    if (mouse.x !== null && mouse.y !== null) {
-      let dx = s.x - mouse.x;
-      let dy = s.y - mouse.y;
-      let dist = Math.sqrt(dx*dx + dy*dy);
+    if (pointer.x !== null && pointer.y !== null) {
+      let dx = s.x - pointer.x;
+      let dy = s.y - pointer.y;
+      let dist = Math.sqrt(dx * dx + dy * dy);
       if (dist < 120) {
         s.x += dx / dist * 3;
         s.y += dy / dist * 3;

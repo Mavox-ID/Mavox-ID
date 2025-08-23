@@ -4,15 +4,133 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mavox-ID | Ye-A!</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mavox-ID | Ye-A!">
+  <meta property="og:description" content="Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™">
+  <meta property="og:image" content="favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ye-a.pp.ua">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mavox-ID | Ye-A!">
+  <meta name="twitter:description" content="Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™">
+  <meta name="twitter:image" content="favicon.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #eee;
+      background: #0f0f1a;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      overflow-y: scroll;
+    }
+    canvas#bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    section {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
+      text-align: center;
+      scroll-snap-align: start;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a0dad, #8a2be2);
+      color: #fff;
+      text-align: center;
+      scroll-snap-align: start;
+    }
+    header h1 span {
+      color: #ffdd00;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #ffdd00; }
+      100% { text-shadow: 0 0 20px #ffdd00; }
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffdd00;
+    }
+    ul {
+      list-style: none;
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+    .project-card {
+      display: inline-block;
+      background: rgba(106, 13, 173, 0.85);
+      padding: 20px;
+      margin: 15px;
+      border-radius: 12px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: rotateY(10deg) scale(1.05);
+      box-shadow: 0 15px 30px rgba(255,255,255,0.3);
+    }
+    footer {
+      height: 50vh;
+      background: #111;
+      color: #888;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      scroll-snap-align: start;
+      padding: 20px;
+    }
+    a {
+      color: #ffdd00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      h2 { font-size: 1.6rem; }
+      .project-card { display: block; margin: 15px auto; }
+    }
+  </style>
 </head>
 <body>
   <canvas id="bg"></canvas>
 
   <header>
     <h1>Mavox-ID <span>Ye-A!</span></h1>
-    <p>Blockchain & Web Developer | Crypto Enthusiast | Admin @ B-HD™</p>
-    <a href="#about" class="scroll-btn">↓ Scroll</a>
+    <p>Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™</p>
   </header>
 
   <section id="about">
@@ -27,28 +145,82 @@
       <li>JavaScript</li>
       <li>Python</li>
       <li>C++ / C#</li>
+      <li>PHP</li>
       <li>Blockchain Development</li>
-      <li>Web Development</li>
+      <li>Web Development (HTML, CSS, JS)</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-card">B-HD™ Owner & Blockchain Solutions</div>
-    <div class="project-card">GitHub Projects & Experiments</div>
-    <div class="project-card">Crypto & Web Apps</div>
+    <div class="project-card">GitHub Projects & Enterprise</div>
+    <div class="project-card">Web-sites & Design/API</div>
+    <div class="project-card">Crypto & Mobile Apps</div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:markd.voznyuk@gmail.com">markd.voznyuk@gmail.com</a></p>
-    <p>Website: <a href="https://ye-a.pp.ua" target="_blank">ye-a Website</a></p>
+    <p>Website: <a href="https://ye-a.pp.ua" target="_blank">Ye-A! Website</a></p>
   </section>
 
   <footer>
-    <p>© Mavox-ID | Powered by Ye-A!</p>
+    <p>© Ye-A! Website | Powered by Mavox-ID</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const sections = document.querySelectorAll("section");
+    const options = { threshold: 0.3 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    for (let i = 0; i < 120; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255,255,255,0.7)";
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>

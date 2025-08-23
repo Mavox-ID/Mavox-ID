@@ -65,49 +65,67 @@
     h2 { font-size: 2rem; margin-bottom: 20px; color: #ffdd00; }
     ul { list-style: none; font-size: 1.2rem; line-height: 2rem; }
 
-    .project-card {
-      background: rgba(106, 13, 173, 0.85);
-      padding: 20px; margin: 15px; border-radius: 12px;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      cursor: pointer;
-    }
-    .project-card:hover {
-      transform: rotateY(10deg) scale(1.05);
-      box-shadow: 0 15px 30px rgba(255,255,255,0.3);
-    }
+    .carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-    .badges {
-      width: 100%; overflow: hidden;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      white-space: nowrap;
-      padding: 10px 0;
-    }
-    .badges span {
-      display: inline-block;
-      padding: 0 30px;
-      font-weight: bold;
-      color: #ffdd00;
-      animation: scroll 15s linear infinite;
-    }
-    @keyframes scroll {
-      from { transform: translateX(100%); }
-      to { transform: translateX(-100%); }
-    }
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.project-card {
+  min-width: 250px;
+  margin: 10px;
+  background: rgba(106, 13, 173, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
     footer {
-      height: 50vh;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      color: #eee;
-      display: flex; justify-content: center; align-items: center;
-      text-align: center; padding: 20px;
+    height: 40vh;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px 20px 0 0;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+    padding: 20px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.4);
+    transform: translateZ(0);
     }
 
     @media (max-width: 768px) {
       h2 { font-size: 1.6rem; }
       .project-card { display: block; margin: 15px auto; }
     }
+.fly-in li {
+  opacity: 0;
+  transform: translate(
+    calc((Math.random() - 0.5) * 2000px),
+    calc((Math.random() - 0.5) * 2000px)
+  ) rotateZ(720deg);
+  transition: transform 2s ease, opacity 2s ease;
+}
+
+.fly-in li.visible {
+  opacity: 1;
+  transform: translate(0,0) rotateZ(0);
+}
   </style>
 </head>
 <body>
@@ -118,26 +136,42 @@
     <p>Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™</p>
   </header>
 
-  <div class="badges">
-    <span>🔥 Blockchain Developer</span>
-    <span>🚀 Web 3.0 Enthusiast</span>
-    <span>⚡ Full-stack Coder</span>
-    <span>🎯 Crypto & AI Projects</span>
+  <section id="projects">
+  <h2>Projects</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="project-card">B-HD™ Owner & Blockchain Solutions</div>
+      <div class="project-card">GitHub Projects & Enterprise</div>
+      <div class="project-card">Web-sites & Design/API</div>
+      <div class="project-card">Crypto & Mobile Apps</div>
+
+      <!-- DPS -->
+
+      <div class="project-card">B-HD™ Owner & Blockchain Solutions</div>
+      <div class="project-card">GitHub Projects & Enterprise</div>
+      <div class="project-card">Web-sites & Design/API</div>
+      <div class="project-card">Crypto & Mobile Apps</div>
+    </div>
   </div>
+</section>
 
   <section id="about">
     <h2>About Me</h2>
     <p>Passionate developer with 5+ years on GitHub. Skilled in Java, JS, Python, C++, C# and creating innovative blockchain & web solutions.</p>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Java</li><li>JavaScript</li><li>Python</li>
-      <li>C++ / C#</li><li>PHP</li><li>Blockchain Dev</li>
-      <li>Web Development (HTML, CSS, JS)</li>
-    </ul>
-  </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="fly-in">
+    <li>Java</li>
+    <li>JavaScript</li>
+    <li>Python</li>
+    <li>C++ / C#</li>
+    <li>PHP</li>
+    <li>Blockchain Development</li>
+    <li>Web Development (HTML, CSS, JS)</li>
+  </ul>
+</section>
 
   <section id="projects">
     <h2>Projects</h2>
@@ -165,6 +199,11 @@
       });
     }, { threshold: 0.3 });
     sections.forEach(s => observer.observe(s));
+    const skills = document.querySelectorAll(".fly-in li");
+
+    skills.forEach(skill => {
+    observer.observe(skill);
+    });
 
     const canvas = document.getElementById("bg");
     const ctx = canvas.getContext("2d");

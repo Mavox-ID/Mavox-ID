@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=mavox-id&theme=onestar&no-frame=true&column=5&row=2" />
+  <img src="https://github-profile-trophy.vercel.app/?username=mavox-id&theme=juicyfresh&no-frame=true&no-bg=true&title=Commits,Repositories,Followers,Stars" />
 </p>
 
 ---

@@ -4,27 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mavox-ID | Ye-A!</title>
-
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mavox-ID | Ye-A!">
-  <meta property="og:description" content="Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™">
-  <meta property="og:image" content="favicon.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ye-a.pp.ua">
+   <!-- Open Graph -->
+   <meta property="og:title" content="Mavox-ID | Ye-A!">
+   <meta property="og:description" content="Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™">
+   <meta property="og:image" content="favicon.png">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://ye-a.pp.ua">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mavox-ID | Ye-A!">
-  <meta name="twitter:description" content="Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™">
-  <meta name="twitter:image" content="favicon.png">
+   <!-- Twitter Card -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Mavox-ID | Ye-A!">
+   <meta name="twitter:description" content="Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™">
+   <meta name="twitter:image" content="favicon.png">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
       color: #eee;
@@ -36,38 +32,26 @@
     }
     canvas#bg {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       z-index: -1;
     }
     section {
       height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 40px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
       text-align: center;
       scroll-snap-align: start;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 0; transform: translateY(50px);
       transition: all 1s ease-out;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible { opacity: 1; transform: translateY(0); }
+
     header {
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
       background: linear-gradient(135deg, #6a0dad, #8a2be2);
-      color: #fff;
-      text-align: center;
-      scroll-snap-align: start;
+      color: #fff; text-align: center;
     }
     header h1 span {
       color: #ffdd00;
@@ -77,22 +61,13 @@
       0% { text-shadow: 0 0 5px #ffdd00; }
       100% { text-shadow: 0 0 20px #ffdd00; }
     }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #ffdd00;
-    }
-    ul {
-      list-style: none;
-      font-size: 1.2rem;
-      line-height: 2rem;
-    }
+
+    h2 { font-size: 2rem; margin-bottom: 20px; color: #ffdd00; }
+    ul { list-style: none; font-size: 1.2rem; line-height: 2rem; }
+
     .project-card {
-      display: inline-block;
       background: rgba(106, 13, 173, 0.85);
-      padding: 20px;
-      margin: 15px;
-      border-radius: 12px;
+      padding: 20px; margin: 15px; border-radius: 12px;
       transition: transform 0.5s ease, box-shadow 0.5s ease;
       cursor: pointer;
     }
@@ -100,25 +75,35 @@
       transform: rotateY(10deg) scale(1.05);
       box-shadow: 0 15px 30px rgba(255,255,255,0.3);
     }
+
+    .badges {
+      width: 100%; overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+    .badges span {
+      display: inline-block;
+      padding: 0 30px;
+      font-weight: bold;
+      color: #ffdd00;
+      animation: scroll 15s linear infinite;
+    }
+    @keyframes scroll {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
     footer {
       height: 50vh;
-      background: #111;
-      color: #888;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      scroll-snap-align: start;
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      color: #eee;
+      display: flex; justify-content: center; align-items: center;
+      text-align: center; padding: 20px;
     }
-    a {
-      color: #ffdd00;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+
     @media (max-width: 768px) {
       h2 { font-size: 1.6rem; }
       .project-card { display: block; margin: 15px auto; }
@@ -133,6 +118,13 @@
     <p>Blockchain & Web Developer | Crypto Enthusiast | Owner @ B-HD™</p>
   </header>
 
+  <div class="badges">
+    <span>🔥 Blockchain Developer</span>
+    <span>🚀 Web 3.0 Enthusiast</span>
+    <span>⚡ Full-stack Coder</span>
+    <span>🎯 Crypto & AI Projects</span>
+  </div>
+
   <section id="about">
     <h2>About Me</h2>
     <p>Passionate developer with 5+ years on GitHub. Skilled in Java, JS, Python, C++, C# and creating innovative blockchain & web solutions.</p>
@@ -141,21 +133,17 @@
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>C++ / C#</li>
-      <li>PHP</li>
-      <li>Blockchain Development</li>
+      <li>Java</li><li>JavaScript</li><li>Python</li>
+      <li>C++ / C#</li><li>PHP</li><li>Blockchain Dev</li>
       <li>Web Development (HTML, CSS, JS)</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-card">B-HD™ Owner & Blockchain Solutions</div>
-    <div class="project-card">GitHub Projects & Enterprise</div>
-    <div class="project-card">Web-sites & Design/API</div>
+    <div class="project-card">B-HD™ Blockchain Solutions</div>
+    <div class="project-card">GitHub Projects</div>
+    <div class="project-card">Web-sites & APIs</div>
     <div class="project-card">Crypto & Mobile Apps</div>
   </section>
 
@@ -171,28 +159,21 @@
 
   <script>
     const sections = document.querySelectorAll("section");
-    const options = { threshold: 0.3 };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("visible");
       });
-    }, options);
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    }, { threshold: 0.3 });
+    sections.forEach(s => observer.observe(s));
 
     const canvas = document.getElementById("bg");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let particles = [];
-    for (let i = 0; i < 120; i++) {
-      particles.push({
+    let stars = [];
+    for (let i = 0; i < 150; i++) {
+      stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         r: Math.random() * 2 + 1,
@@ -201,21 +182,47 @@
       });
     }
 
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(255,255,255,0.7)";
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    let mouse = { x: null, y: null };
+    window.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener("deviceorientation", e => {
+        let tiltX = e.gamma / 45; // -45..45
+        let tiltY = e.beta / 90;  // -90..90
+        mouse.x = canvas.width/2 + tiltX * canvas.width/2;
+        mouse.y = canvas.height/2 + tiltY * canvas.height/2;
       });
-      requestAnimationFrame(drawParticles);
     }
-    drawParticles();
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255,255,255,0.8)";
+      stars.forEach(s => {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fill();
+
+        s.x += s.dx; s.y += s.dy;
+
+        if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
+        if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
+
+        if (mouse.x && mouse.y) {
+          let dx = s.x - mouse.x;
+          let dy = s.y - mouse.y;
+          let dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 120) {
+            s.x += dx / dist * 3;
+            s.y += dy / dist * 3;
+          }
+        }
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
 
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;

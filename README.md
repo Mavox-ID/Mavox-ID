@@ -40,7 +40,7 @@ I don’t just code — I **shape the future of blockchain, smart contracts, and
 
 ## 🌐 Connect with Me
 
-- Website: [https://bhd.pp.ua](https://bhd.pp.ua)  
+- Website: [https://ye-a.pp.ua](https://ye-a.pp.ua)  
 - GitHub: [Mavox-ID](https://github.com/Mavox-ID)  
 - Email: markd.voznyuk@gmail.com  
 

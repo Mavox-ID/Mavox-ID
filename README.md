@@ -6,7 +6,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Mavox ID-Blockchain Developer-darkblue?style=for-the-badge&logoColor=white" />
-  <img src="https://img.shields.io/badge/Owner-Blockchain Hyper Development™-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Owner-Blockchain Hyper Development®-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Owner-Sliz®-darkgreen?style=for-the-badge" />
   <img src="https://img.shields.io/badge/GitHub-2 Years-green?style=for-the-badge" />
 </p>
 
@@ -32,7 +33,8 @@ I don’t just code — I **shape the future of blockchain, smart contracts, and
 
 ## 🚀 Projects & Contributions
 
-- **B-HD™** — Owner and lead developer, building cutting-edge blockchain solutions  
+- [**B-HD®**](https://github.com/B-HDR) — Owner and lead developer, building cutting-edge blockchain solutions
+- [**Sliz®**](https://github.com/SlizR) — Owner and main developer, civilization for developers and education   
 - **GitHub Projects** — Numerous personal and collaborative repositories showcasing my dev skills  
 - **Crypto & Web Experiments** — Innovative projects to push the limits of tech  
 

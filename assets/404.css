@@ -1,0 +1,7 @@
+html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+.nf{position:fixed;left:6vw;bottom:12svh;max-width:min(88vw,560px);z-index:1}
+.nf h1{font-size:clamp(5.5rem,21vw,14rem);line-height:.9;background:linear-gradient(180deg,#fff 25%,#ff9d88);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nf p{margin:16px 0 26px;color:#e8c6c2;font-size:clamp(1.05rem,2.4vw,1.45rem)}
+.nf .bt{background:rgba(255,92,64,.14);border-color:rgba(255,128,100,.45)}
+.nf .bt:hover{background:rgba(255,92,64,.26)}
+@media(max-width:700px){.nf{right:6vw;bottom:8svh}}

@@ -1,0 +1,51 @@
+name: stats
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build stats.json
+        env:
+          GH_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          LOGIN: Mavox-ID
+        run: |
+          FROM="$(date -u +%Y)-01-01T00:00:00Z"
+          gh api graphql -f login="$LOGIN" -f from="$FROM" -f query='
+          query($login:String!,$from:DateTime!){
+            user(login:$login){
+              followers{totalCount}
+              repos:repositories(privacy:PUBLIC,ownerAffiliations:OWNER){totalCount}
+              starred:repositories(privacy:PUBLIC,ownerAffiliations:OWNER,first:100){nodes{stargazerCount}}
+              contributionsCollection(from:$from){
+                totalCommitContributions
+                totalIssueContributions
+                totalPullRequestContributions
+                contributionCalendar{totalContributions}
+              }
+            }
+          }' > raw.json
+          jq -c '.data.user as $u | {
+            commits: $u.contributionsCollection.totalCommitContributions,
+            stars: ([$u.starred.nodes[].stargazerCount] | add // 0),
+            repos: $u.repos.totalCount,
+            hours: (($u.contributionsCollection.totalCommitContributions / 2) | round),
+            issues: $u.contributionsCollection.totalIssueContributions,
+            prs: $u.contributionsCollection.totalPullRequestContributions,
+            followers: $u.followers.totalCount,
+            contribs: $u.contributionsCollection.contributionCalendar.totalContributions
+          }' raw.json > stats.new.json
+          jq -e 'all(.[]; type == "number")' stats.new.json
+          mv stats.new.json stats.json
+          rm raw.json
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats.json
+          git diff --cached --quiet || (git commit -m "stats" && git push)

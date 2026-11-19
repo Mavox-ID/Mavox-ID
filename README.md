@@ -13,7 +13,7 @@
 
 ---
 
-# 👋 Hello, I'm Mavox-ID
+# Hello, I'm Mavox-ID
 
 I’m a **Blockchain & Web Developer**, crypto enthusiast, and **Admin at InfinityAI**.  
 With **3+ years of experience on GitHub**, I build fast, secure, and innovative solutions for the decentralized future.  

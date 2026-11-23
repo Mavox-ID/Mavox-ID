@@ -5,53 +5,48 @@
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Mavox ID-Blockchain Developer-darkblue?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Mavox ID-Independent Developer-darkblue?style=for-the-badge&logoColor=white" />
   <img src="https://img.shields.io/badge/Owner-Blockchain Hyper Development®-purple?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Owner-Sliz®-darkgreen?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/GitHub-2 Years-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GitHub-3 Years-green?style=for-the-badge" />
 </p>
 
 ---
 
-# 👋 Hello, I'm Mavox-ID
+# Hi, I'm Mavox-ID
 
-I’m a **Blockchain & Web Developer**, crypto enthusiast, and **Admin at InfinityAI**.  
-With **3+ years of experience on GitHub**, I build fast, secure, and innovative solutions for the decentralized future.  
-
-I don’t just code — I **shape the future of blockchain, smart contracts, and web technologies**.  
+I’m a **Independent Developer**. I enjoy creating completely different projects, and **Admin at InfinityAI**.  
+With **3+ years of experience on GitHub**, and I’m ready to help you or to create something together
 
 ---
 
 ## Skills & Technologies
 
-- **Programming Languages:** Java, JavaScript, Python, C++, C#  
-- **Blockchain Development:** Smart contracts, protocols, DeFi, tokenomics  
-- **Web Development:** Modern web apps, responsive UI, full-stack  
-- **Tools & Platforms:** GitHub, GitHub Actions, CI/CD, Docker, Linux  
+- **Programming Languages:** Bash, (HTML + CSS + JS), MCML, Kotlin, Java, C, Lax, JS, PHP, ASM, C++, Python, C#
+- **Web Development:** Modern web apps, responsive UI, full-stack
+- **Tools & Platforms:** GitHub, GitHub Actions, CI/CD, Docker, Linux
 
 ---
 
 ## Projects & Contributions
 
-- [**B-HD®**](https://github.com/B-HDR) — Owner and lead developer, building cutting-edge blockchain solutions
-- [**Sliz®**](https://github.com/SlizR) — Owner and main developer, civilization for developers and education   
-- **GitHub Projects** — Numerous personal and collaborative repositories showcasing my dev skills  
-- **Crypto & Web Experiments** — Innovative projects to push the limits of tech  
+- [**B-HD®**](https://github.com/B-HDR) - Owner and lead developer, building cutting-edge blockchain solutions (As of today, it is closed.)
+- [**Sliz®**](https://github.com/SlizR) - Owner and main developer, civilization for developers and education (It’s not closed, but it’s currently in the archive.)
+- **GitHub Projects** - Numerous personal and collaborative repositories showcasing my dev skills
 
 ---
 
 ## Connect with Me
 
 - Website: [https://ye-a.pp.ua](https://ye-a.pp.ua)  
-- GitHub: [Mavox-ID](https://github.com/Mavox-ID)  
-- Email: markd.voznyuk@gmail.com  
+- GitHub: [Mavox-ID](https://github.com/Mavox-ID) - You are here
+- Email: unercloaddatapacked@gmail.com
 
 ---
 
-## Mission Statement
+## My goal
 
-To create **reliable, scalable, and ultra-fast blockchain solutions** while pushing innovation in web technologies.  
-I strive for **excellence**, deliver results, and continuously grow as a developer.  
+I’m generally a lazy person, but when something interests me, I’m happy to get involved—so feel free to reach out if you’d like to work together or create something.
 
 ---
 
